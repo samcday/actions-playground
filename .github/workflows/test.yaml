@@ -1,0 +1,12 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+    - name: Test
+      env:
+        I_DONT_EXIST: ${{ secrets.I_DONT_EXIST }}
+      run: |
+        echo $I_DONT_EXIST
